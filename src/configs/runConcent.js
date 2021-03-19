@@ -1,8 +1,9 @@
 import { run } from "concent";
 import { MODEL_NAME } from "./vars";
 import store from "../i18n/index";
+
 const runStore = () => {
-  return run(
+  run(
     { [MODEL_NAME]: store },
     {
       middlewares: [],
@@ -22,4 +23,5 @@ const runStore = () => {
     }
   );
 };
+
 export default runStore;

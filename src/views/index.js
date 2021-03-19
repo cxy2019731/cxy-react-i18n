@@ -22,7 +22,7 @@ function RenderI18nKeyToText(props) {
  * @returns string
  */
 const renderI18nKeyToText = (i18nKey) => {
-  return <RenderI18nKeyToText i18nKey={i18nKey} />;
+  return React.createElement(RenderI18nKeyToText, { i18nKey });
 };
 
 export default renderI18nKeyToText;

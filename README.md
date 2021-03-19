@@ -2,25 +2,29 @@
 
 ## 任何建议、问题
 
-<a href="https://github.com/cxy2019731/cxy-react-i18n">https://github.com/cxy2019731/cxy-react-i18n</a>
+<a href="https://github.com/itmanyong/cxy-react-i18n/issues" target="_blank">https://github.com/itmanyong/cxy-react-i18n/issues</a>
 
 ## 更新日志
 
-<a href="https://github.com/cxy2019731/cxy-react-i18n/blob/master/logs.md">https://github.com/cxy2019731/cxy-react-i18n/blob/master/logs.md</a>
+<a href="https://github.com/itmanyong/cxy-react-i18n/blob/master/logs.md" target="_blank">https://github.com/itmanyong/cxy-react-i18n/blob/master/logs.md</a>
 
 ## 注意
 
-1.使用时需要注意 cxy-react-i18n 的版本和主要依赖 concent 的版本。需要保持一致。 2.当前支持的 concent 版本为:^2.14.12
+1.使用时需要注意 cxy-react-i18n 的版本和主要依赖 concent 的版本。需要保持一致。 2.当前支持的 concent 版本为:<a style="color:red;font-size:20px;">^2.14.13</a>
 
 ## 开始
 
 ```javascript
-    yarn add cxy-react-i18n
+    // 预先安装concent依赖
+    yarn add concent
+    // or
+    npm i concent
 ```
 
-or
-
 ```javascript
+    // 安装cxy-react-i18n包
+    yarn add cxy-react-i18n
+    // or
     npm i cxy-react-i18n
 ```
 
@@ -32,6 +36,17 @@ or
 // 项目中未使用concent
 import { i18nRun } from "cxy-react-i18n";
 i18nRun();
+// 项目中已使用concent注册方式一  自动注册
+import { registerI18n } from "cxy-react-i18n";
+registerI18n();
+// 项目中已使用concent注册方式二  手动注册
+import { run } from "concent";
+import { i18nModel, MODEL_NAME } from "cxy-react-i18n"; //导入i8n的静态资源
+run({
+  ...你的models,
+  // 将i18n的静态资源如下书写即可
+  [MODEL_NAME]: i18nModel,
+});
 ```
 
 2.注册文本
@@ -94,7 +109,55 @@ ir();
 
 ```javascript
 1.应尽可能在最顶层逻辑调用--推荐入口文件。
-2.`i18nRun`可和已使用concent的项目混合使用,不会出现run的重复使用冲突
+2.`i18nRun`适用于未使用concent进行run注册的项目。
+```
+
+### `registerI8n`---------注册器，初始化,适用于已使用 concent 的项目,自动注册方式
+
+1.简写：
+
+```javascript
+registerI8n === ri;
+```
+
+2.导入
+
+```javascript
+import { registerI8n } from "cxy-react-i18n";
+registerI8n();
+// 或者
+import { ri } from "cxy-react-i18n";
+ri();
+```
+
+3.注意
+
+```javascript
+1.应尽可能在最顶层逻辑调用--推荐入口文件。
+2.`registerI8n`适用于已使用concent且进行run注册的项目,是自动注册的。
+```
+
+### `i18nModel`---------注册器，初始化,适用于已使用 concent 的项目,手动注册方式
+
+1.说明：
+需配合 `MODEL_NAME` 使用
+
+2.导入
+
+```javascript
+import { run } from "concent";
+import { i18nModel, MODEL_NAME } from "cxy-react-i18n";
+run({
+  ...你的models,
+  [MODEL_NAME]: i18nModel,
+});
+```
+
+3.注意
+
+```javascript
+1.应尽可能在最顶层逻辑调用--推荐入口文件。
+2.`registerI8n`适用于已使用concent且进行run注册的项目,是自动注册的。
 ```
 
 ### `renderI18nKeyToText`---------转换器，转换指定 key 的文本
@@ -417,7 +480,7 @@ gc(getComputedKey);
     i18nMessage---当前才用的语言包的内容
     i18nLangObj---已存在的语言包的key对象
     i18nLangKeys---已存在的语言包的key数组
-    i18nMessageKeys---已存在的语言包内容的key数组(默认取message中首个语言包)
+    i18nMessageKeys---已存在的语言包内容的key数组
 ```
 
 ## HOOKS API
@@ -437,7 +500,7 @@ function App() {
 }
 ```
 
-### useI18nState----------映射状态方法
+### useI18nReducer----------映射状态方法
 
 1.使用
 
@@ -481,5 +544,19 @@ function App() {
 
 ## 示例(还未完全完善,可能未及时同步,会尽快完善)
 
-<a href="https://codesandbox.io/s/cxy-react-i18n-example-fnqux" target="_blank" style="font-size:30px;">cxy-react-i18n 综合示例</a><br />
-<a href="https://codesandbox.io/s/cxy-react-i18n-example-fnqux" target="_blank" style="font-size:30px;">项目中已经引入 concent 的使用示例-自动注册</a><br />
+<h1><a href="https://codesandbox.io/s/cxy-react-18n-zongheshili-zvbc7"  target="_blank">综合示例</a></h1>
+<h1><a href="https://codesandbox.io/s/weishiyongconcentdexiangmushiyongshili-phhsl"  target="_blank">项目中未使用 concent 的使用示例-自动注册</a></h1>
+<h1><a href="https://codesandbox.io/s/yishiyongconcentdexiangmuzidongzhuceshili-ith25"  target="_blank">项目中已使用 concent 的使用示例-自动注册</a></h1>
+<h1><a href="https://codesandbox.io/s/yishiyongconcentdexiangmushoudongzhuce-1guj8?file=/src/index.js"  target="_blank">项目中已使用 concent 的使用示例-手动注册</a></h1>
+
+## message 数据格式要求
+
+```javascript
+// message的数据格式为
+const 语言包 = {
+  语言KEY: {
+    文本KEY: 文本值,
+  },
+  ...
+};
+```

@@ -46,9 +46,9 @@ export function i18nLangKeys({ message }) {
  */
 export function i18nMessageKeys({ message }, o, f) {
   try {
-    const { i18nLangKey } = f.cuVal;
-    if (i18nLangKey[0]) {
-      return Object.keys(message[i18nLangKey[0]]);
+    const { i18nLangKeys } = f.cuVal;
+    if (i18nLangKeys[0]) {
+      return Object.keys(message[i18nLangKeys[0]]);
     } else {
       return [];
     }

@@ -42,7 +42,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "concent": "^2.14.13",
+    "concent": "^2.14.14",
     "react": "^17.0.1"
   }
 }

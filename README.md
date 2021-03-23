@@ -12,6 +12,25 @@
 
 1.使用时需要注意 cxy-react-i18n 的版本和主要依赖 concent 的版本。需要保持一致。 2.当前支持的 concent 版本为:<a style="color:red;font-size:20px;">^2.14.15</a>
 
+## 示例
+
+<h3><a href="https://codesandbox.io/s/cxy-react-18n-zongheshili-zvbc7"  target="_blank">综合示例</a></h3>
+<h3><a href="https://codesandbox.io/s/weishiyongconcentdexiangmushiyongshili-phhsl"  target="_blank">项目中未使用 concent 的使用示例-自动注册</a></h3>
+<h3><a href="https://codesandbox.io/s/yishiyongconcentdexiangmuzidongzhuceshili-ith25"  target="_blank">项目中已使用 concent 的使用示例-自动注册</a></h3>
+<h3><a href="https://codesandbox.io/s/yishiyongconcentdexiangmushoudongzhuce-1guj8?file=/src/index.js"  target="_blank">项目中已使用 concent 的使用示例-手动注册</a></h3>
+
+## message 语言包数据格式要求
+
+```javascript
+// message的数据格式为
+const 语言包 = {
+  语言KEY: {
+    文本KEY: 文本值,
+  },
+  ...
+};
+```
+
 ## 开始
 
 ```javascript
@@ -530,7 +549,7 @@ function App() {
 }
 ```
 
-### useI18nKeyToText----------映射指定key的文本(同fr)-具有响应能力
+### useI18nKeyToText----------映射指定 key 的文本(同 fr)-具有响应能力
 
 1.使用
 
@@ -540,23 +559,4 @@ function App() {
   const keyText = useI18nKeyToText(textKey); //textKey不填或为空均返回空字符串
   return <>{keyText}</>;
 }
-```
-
-## 示例
-
-<h1><a href="https://codesandbox.io/s/cxy-react-18n-zongheshili-zvbc7"  target="_blank">综合示例</a></h1>
-<h1><a href="https://codesandbox.io/s/weishiyongconcentdexiangmushiyongshili-phhsl"  target="_blank">项目中未使用 concent 的使用示例-自动注册</a></h1>
-<h1><a href="https://codesandbox.io/s/yishiyongconcentdexiangmuzidongzhuceshili-ith25"  target="_blank">项目中已使用 concent 的使用示例-自动注册</a></h1>
-<h1><a href="https://codesandbox.io/s/yishiyongconcentdexiangmushoudongzhuce-1guj8?file=/src/index.js"  target="_blank">项目中已使用 concent 的使用示例-手动注册</a></h1>
-
-## message 数据格式要求
-
-```javascript
-// message的数据格式为
-const 语言包 = {
-  语言KEY: {
-    文本KEY: 文本值,
-  },
-  ...
-};
 ```

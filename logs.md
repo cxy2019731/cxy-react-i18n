@@ -1,3 +1,14 @@
+<!--
+ * @Author: itmanyong
+ * @Date: 2021-03-19 10:49:53
+ * @LastEditors: itmanyong
+ * @Description: now file Description
+ * @LastEditTime: 2021-04-06 14:50:52
+ * @FilePath: \cxy-react-i18n\logs.md
+-->
+## 2021.04.06
+    1.更新依赖包版本
+
 ## 2021.3.23
     1.更新依赖包concent版本为^2.14.15
 

@@ -9,7 +9,7 @@ const invokeReducer = (reducer, payload) => setTimeout(() => dispatch(reducer, p
  */
 export const watch_lang_message = {
 	fn: ({ lang, message }, o, f) => {
-		const messageKeys = Object.keys(message)[0];
+		const messageKeys = Object.keys(message);
 		const storaLang = localStorage.getItem(STORE_LANG_KEY) || null;
 		if (!lang && messageKeys[0]) {
 			const setLang = f.refCtx.reducer[MODEL_NAME].setLang;

@@ -3,9 +3,12 @@
  * @Date: 2021-03-19 10:49:53
  * @LastEditors: itmanyong
  * @Description: now file Description
- * @LastEditTime: 2021-04-06 14:50:52
+ * @LastEditTime: 2021-07-09 13:54:19
  * @FilePath: \cxy-react-i18n\logs.md
 -->
+## 2021.07.09
+
+1.更新依赖
 
 ## 2021.06.25
 
